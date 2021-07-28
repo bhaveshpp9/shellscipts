@@ -25,7 +25,7 @@ do
 									for x10 in {A..Z}
 									do
 
-										echo $x1$x2$x3$x4$x5$x6$x7$x8$x9$x10 > $file1
+										echo $x1$x2$x3$x4$x5$x6$x7$x8$x9$x10 >> $file1
 									
 									done
 								done 
