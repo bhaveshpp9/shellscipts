@@ -1,0 +1,19 @@
+#!/bin/bash -x
+
+for i in {1..10}
+do
+echo "Top five services with high cpu usage "
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head -n 6
+echo " "
+
+
+echo " Top five services with high memory usage "
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 6
+
+echo "$i "
+echo | awk '{print "Load Average is " $1 " " $2 " " $3 }' < /proc/loadavg
+
+sleep 10
+
+done
+
